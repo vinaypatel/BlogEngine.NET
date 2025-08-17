@@ -1,0 +1,64 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to BlogEngine.NET</h1>
+    <p>Learn about <a href="https://blogengine.io/">BlogEngine.NET</a>.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Recent Posts</h2>
+        <!-- TODO: Implement blog post listing using BlogEngine.Core -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Sample Blog Post</h5>
+                <p class="card-text">This is a sample blog post. In the full implementation, this would be populated from the BlogEngine.Core data.</p>
+                <p class="card-text"><small class="text-muted">Posted on January 1, 2024</small></p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h3>Sidebar</h3>
+        <!-- TODO: Implement widgets using BlogEngine.Core -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Categories</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Programming</a></li>
+                    <li><a href="#">Web Development</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Archives</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">January 2024</a></li>
+                    <li><a href="#">December 2023</a></li>
+                    <li><a href="#">November 2023</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Search</h5>
+                <form asp-controller="Home" asp-action="Search" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="q" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
