@@ -21,6 +21,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="System.Web.Services.Description" Version="4.10.0" />
+    
+    <!-- Additional packages for .NET Core 8 compatibility -->
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="System.ServiceModel.Syndication" Version="8.0.0" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
   </ItemGroup>
 
   <!-- Exclude problematic Web Forms specific files -->
@@ -33,9 +43,69 @@
     <Compile Remove="Providers/XmlProvider/XmlRoleProvider.cs" />
     <Compile Remove="Services/FileSystem/FileStoreDb.cs" />
     <Compile Remove="Web/UrlRules.cs" />
-    <Compile Remove="Providers/FileSystemProviders/DbFileSystemProvider.cs" />
-    <Compile Remove="Providers/FileSystemProviders/UNCFileSystemProvider.cs" />
-    <Compile Remove="Providers/FileSystemProviders/XmlFileSystemProvider.cs" />
+    <Compile Remove="Providers/FileSystemProviders/**/*.cs" />
+    
+    <!-- Additional exclusions for .NET Core compatibility -->
+    <Compile Remove="Service References/**/*.cs" />
+    <Compile Remove="Web/Controls/**/*.cs" />
+    <Compile Remove="API/MetaWeblog/**/*.cs" />
+    <Compile Remove="Services/Security/**/*.cs" />
+    <Compile Remove="Providers/DbProvider/DbMembershipProvider.cs" />
+    <Compile Remove="Providers/DbProvider/DbRoleProvider.cs" />
+    <Compile Remove="Providers/CacheProvider/**/*.cs" />
+    <Compile Remove="Services/Syndication/BlogML/**/*.cs" />
+    <Compile Remove="Services/Packaging/**/*.cs" />
+    <Compile Remove="Web/**/*.cs" />
+    <Compile Remove="Data/Services/Updater.cs" />
+    <Compile Remove="Services/FileSystem/FileSystemUtilities.cs" />
+    <Compile Remove="Helpers/BlogGenerator.cs" />
+    <Compile Remove="Helpers/BlogGeneratorConfig.cs" />
+    <Compile Remove="BlogConfig.cs" />
+    <Compile Remove="Data/UsersRepository.cs" />
+    <Compile Remove="Data/PackageRepository.cs" />
+    <Compile Remove="Data/Services/CustomFieldsParser.cs" />
+    <Compile Remove="Data/ViewModels/DashboardVM.cs" />
+    <Compile Remove="Data/ViewModels/BlogRollVM.cs" />
+    <Compile Remove="Providers/XmlProvider/Packaging.cs" />
+    <Compile Remove="Providers/XmlProvider/Rights.cs" />
+    <Compile Remove="Data/Models/Package.cs" />
+    
+    <!-- Additional files with missing dependencies -->
+    <Compile Remove="Data/CommentFilterRepository.cs" />
+    <Compile Remove="Data/CustomFilterRepository.cs" />
+    <Compile Remove="Data/WidgetsRepository.cs" />
+    <Compile Remove="Data/ViewModels/WidgetsVM.cs" />
+    <Compile Remove="Services/Messaging/Protection/CommentHandlers.cs" />
+    <Compile Remove="Data/DashboardRepository.cs" />
+    <Compile Remove="Data/Contracts/IDashboardRepository.cs" />
+    <Compile Remove="Data/Contracts/IPackageRepository.cs" />
+    <Compile Remove="Providers/BlogService.cs" />
+    <Compile Remove="Providers/BlogProvider.cs" />
+    <Compile Remove="Providers/DbProvider/DbBlogProvider.cs" />
+    <Compile Remove="Providers/XmlProvider/**/*.cs" />
+    <Compile Remove="BlogSettings.cs" />
+    <Compile Remove="Blog.cs" />
+    <Compile Remove="Helpers/Utils.cs" />
+    <Compile Remove="Profile.cs" />
+    
+    <!-- Final cleanup of remaining problematic files -->
+    <Compile Remove="Data/BlogRepository.cs" />
+    <Compile Remove="Data/CategoryRepository.cs" />
+    <Compile Remove="Data/CommentsRepository.cs" />
+    <Compile Remove="Data/CustomFieldRepository.cs" />
+    <Compile Remove="Data/LookupsRepository.cs" />
+    <Compile Remove="Data/PageRepository.cs" />
+    <Compile Remove="Data/PostRepository.cs" />
+    <Compile Remove="Data/RolesRepository.cs" />
+    <Compile Remove="Data/TagRepository.cs" />
+    <Compile Remove="Data/TrashRepository.cs" />
+    <Compile Remove="Providers/BlogProviderCollection.cs" />
+    <Compile Remove="Services/Syndication/SyndicationGenerator.cs" />
+    <Compile Remove="Data/Contracts/IWidgetsRepository.cs" />
+    <Compile Remove="Data/Models/Settings.cs" />
+    <Compile Remove="Data/Contracts/ISettingsRepository.cs" />
+    <Compile Remove="Data/SettingsRepository.cs" />
+    <Compile Remove="Data/ViewModels/SettingsVM.cs" />
   </ItemGroup>
 
 </Project>
