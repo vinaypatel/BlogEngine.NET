@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Configuration.Provider;
 using BlogEngine.Core.FileSystem;
+using SystemDirectory = System.IO.Directory;
+using SystemFile = System.IO.File;
 
 namespace BlogEngine.Core.Providers
 {
